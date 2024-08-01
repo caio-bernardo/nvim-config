@@ -26,6 +26,7 @@ vim.opt.splitbelow = true
 
 -- Tabs and Text Repr
 vim.opt.textwidth = 120
+vim.o.linebreak = true
 vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 vim.opt.tabstop = 4
@@ -105,6 +106,7 @@ local plugins = {
 				{ path = "luvit-meta/library", words = { "vim%.uv" } },
 			}
 		},
+		enable = false, -- TODO remove this and add lazydev to completion source
 	},
 
 	{ "Bilal2453/luvit-meta", lazy = true },
@@ -130,7 +132,7 @@ local plugins = {
 				group = vim.api.nvim_create_augroup("UserLspAttach", {clear = true}),
 				callback = function(ev)
 					-- Waiting for 0.11 for autocmp + snippets
-					vim.lsp.completion.enable(true, ev.data.client_id, ev.buf, {autotrigger = false})
+					-- vim.lsp.completion.enable(true, ev.data.client_id, ev.buf, {autotrigger = false})
 				end
 			})
 
