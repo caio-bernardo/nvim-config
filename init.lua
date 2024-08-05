@@ -203,8 +203,8 @@ local plugins = {
 
 			-- Set completion and a fallback for omnicomp
 			require("mini.completion").setup({
-				lsp_completon = {
-					source_func = "omnifunc",
+				lsp_completion = {
+					source_func = "completefunc",
 				},
 				fallback_action = "<C-x><C-o>",
 			})
